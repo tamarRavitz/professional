@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import SignIn from './components/signIn';
+import SignUp from './components/signUp';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import DefiningAJobRequirement from './components/client/definingAJobRequirement/definingAJobRequirement';
+import UpdatePersonalDetails from './components/client/updatePersonalDetails/updatePersonalDetails';
+import ClientMenu from './components/client/clientMenu/clientMenu';
+import ViewWorks from './components/client/clientMenu/viewWorks/viewWorks';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/DefiningAJobRequirement" element={<DefiningAJobRequirement />} />
+          <Route path="/UpdatePersonalDetails" element={<UpdatePersonalDetails />} />
+          <Route path="/ClientMenu" element={<ClientMenu />} />
+          <Route path="/ViewWorks" element={<ViewWorks />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+
   );
 }
 
